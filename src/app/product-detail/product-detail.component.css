@@ -1,0 +1,122 @@
+
+.product-details {
+    margin-top: 2rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .product-details img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-details h2 {
+    font-size: 1.5rem;
+  }
+  
+  .product-details p {
+    margin: 1rem 0;
+  }
+  
+  .sizes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .sizes span {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+  }
+
+  .categories {
+    display: flex;
+    /* justify-content: center; */
+    margin: 2rem 0;
+    margin-left: 25px;
+    
+  }
+  
+  .categories button {
+   
+    padding: 0.5rem 1rem;
+    border: none;
+    color:black;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  .categories button.selected {
+    border-bottom: 2px rgb(0, 242, 0) solid;
+    color: rgb(0, 242, 0);
+  }
+  
+
+  .categories button:hover {
+   
+    color: #000000;
+    border-bottom: 2px hsl(120, 100%, 47%) solid;
+  }
+  .justify-content-center{
+    margin-top: 45px;
+  }
+
+
+  .sizes {
+    margin-top: 1rem;
+  }
+  
+  .sizes button {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #000000;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    text-align: center;
+    width: 55px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .color button{
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    text-align: center;
+    width: 45px;
+    height: 40px;
+  
+  }
+  .color button.selected {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .sizes button.selected {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #00a930;
+ 
+   width: 45%;
+   opacity: -20px;
+   display: block;
+    height: 50px;
+   border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
