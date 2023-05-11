@@ -54,7 +54,8 @@ export class CartComponent implements OnInit {
   }
 
   checkout(): void {
-    this.Options.amount = this.totalAmount * 100; 
+   
+    this.Options.amount = Math.round(this.cartTotal * 100); 
   }
   
 

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   selectedColor = '';
   selectedSize = '';
   cartTotal: any;
-  
+
   constructor(
     private router: Router,
     private productService: ProductService,
@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
     this.clothingProducts = this.productService.getClothingProducts();
     this.currentProducts = this.clothingProducts;
     this.cart = this.cartService.getCart();
+    this.cartTotal = this.cart.reduce((total, item) => total + item.price * item.quantity, 0);
     console.log('cart items', this.cart);
   }
 
@@ -66,10 +67,10 @@ export class HomeComponent implements OnInit {
     this.cartService.increaseQuantity(item);
   }
 
-  checkout(): void {
-    this.cartTotal = this.cart.reduce((total, item) => total + item.price * item.quantity, 0);
-    this.Options.amount = this.cartTotal * 100; 
-  }
+ checkout(): void {
+  this.Options.amount = Math.round(this.cartTotal * 100); 
+}
+
 
   Options: PaystackOptions = {
     email: 'customer@example.com',

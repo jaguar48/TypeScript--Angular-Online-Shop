@@ -2,6 +2,7 @@
 
 <app-category-navigation (categorySelected)="selectCategory()"></app-category-navigation>
 <div class="container">
+  <h2>CART</h2>
   <div class="row justify-content-center">
 <div class="cart-item" *ngFor="let item of cart">
   <img [src]="item.image" [alt]="item.name">
@@ -34,9 +35,9 @@
 <div style="float:left;">
     <button class="checkout-button"
     angular4-paystack
-    [key]="'pk_live_60db3af35e4c5a3b71212944c7dc81d61dcbb568'"
+    [key]="''"
     [email]="'mailexample@mail.com'"
-    [amount]="cartTotal * 100"
+    [amount]="totalAmount * 100"
     [ref]="reference"
     [class]="'btn btn-primary'"
     (click)="checkout()"

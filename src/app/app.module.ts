@@ -28,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    Angular4PaystackModule.forRoot('pk_live_60db3af35e4c5a3b71212944c7dc81d61dcbb568'), // Add the public key here
+    Angular4PaystackModule.forRoot(''), // Add the public key here
 
   ],
   providers: [ProductService],
