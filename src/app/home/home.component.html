@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> 
-   <script src ="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
- 
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-9">
@@ -32,36 +29,54 @@
         </div>
         
          
-            <div class="cart-dropdown" *ngIf="showCartDropdown">
-              <div class="cart-item" *ngFor="let item of cart">
-                <img [src]="item.image" [alt]="item.name" style="height: 30px;">
-                <h2>{{ item.name }}</h2>
-                <div class="quantity">
-                  <button (click)="decreaseQuantity(item)">-</button>
-                  <span>{{ item.quantity }}</span>
-                  <button (click)="increaseQuantity(item)">+</button>
-                </div>
-                <p class="price">{{ item.price | currency:'USD' }}</p>
-                <!-- <button (click)="removeItem(item)">Remove</button> -->
-              </div>
-              <p class="cart-total">Total: {{ cartTotal | currency:'USD' }}</p> 
-              <button
-              angular4-paystack
-              [key]="'pk_live_60db3af35e4c5a3b71212944c7dc81d61dcbb568'"
-              [email]="'mailexample@mail.com'"
-              [amount]="cartTotal * 100"
-              [ref]="reference"
-              [class]="'btn btn-primary'"
-              (click)="checkout()"
-              (paymentInit)="paymentInit()"
-              (onClose)="paymentCancel()"
-              (callback)="paymentDone($event)"
-            >
-              Pay with Paystack
-            </button>
-            
-             
+        <div class="cart-dropdown" *ngIf="showCartDropdown">
+          <br>
+          <b class="cart-title">My Bag, {{ cart.length }} Items</b>
+          <br><br>
+          <div class="cart-item" *ngFor="let item of cart">
+            <img [src]="item.image" [alt]="item.name" style="height:150px;width:100px;float:right;margin-right: 15px;">
+            <div class="quantity">
+              <div style="margin-top: 0px; "><button (click)="decreaseQuantity(item)">-</button></div>
+              <span style="float: right;padding-top: 40px;padding-left: 10px;">{{ item.quantity }}</span>
+              <div  style="margin-top: 30px; "><button (click)="increaseQuantity(item)">+</button></div>
             </div>
+            <div class="cart-item-details">
+              <h2>{{ item.name }}</h2>
+              <b><p class="price">{{ item.price | currency:'USD' }}</p></b>
+              <label for="size">Size:</label>
+              <div class="sizes ">
+                <button *ngFor="let size of item.sizes" 
+                        [class.selected]="selectedSize === size" 
+                        (click)="selectedSize = size">{{ size }}</button>
+              </div>
+              <label for="color">Color:</label>
+              <div class="color">
+                <button *ngFor="let color of item.colors" 
+                        [class.selected]="selectedColor === color" 
+                        (click)="selectedColor = color" 
+                        [style.backgroundColor]="color"></button>
+              </div>
+            </div>
+          </div>
+          <p class="cart-total">Total: <span class ="cur">{{ cartTotal | currency:'USD' }}</span></p> 
+         
+          <button (click)="viewCart()" class="checkout">VIEW BAG</button>
+
+          <button class="checkout-button"
+          angular4-paystack
+          [key]="'pk_live_60db3af35e4c5a3b71212944c7dc81d61dcbb568'"
+          [email]="'mailexample@mail.com'"
+          [amount]="cartTotal * 100"
+          [ref]="reference"
+          [class]="'btn btn-primary'"
+          (click)="checkout()"
+          (paymentInit)="paymentInit()"
+          (onClose)="paymentCancel()"
+          (callback)="paymentDone($event)">
+          CHECKOUT
+        </button>
+        </div>
+        
         <h1 class="cat">{{ currentCategory | titlecase }}</h1><br><br>
         <div class="products">
            

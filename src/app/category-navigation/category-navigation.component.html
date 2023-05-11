@@ -1,1 +1,8 @@
-<p>category-navigation works!</p>
+<div class="categories">
+    <button [class.selected]="selectedCategory === 'all'" (click)="selectCategory('all')">ALL</button>
+    <button [class.selected]="selectedCategory === 'women'" (click)="selectCategory('women')">WOMEN</button>
+    <button [class.selected]="selectedCategory === 'men'" (click)="selectCategory('men')">MEN</button>
+    <button [class.selected]="selectedCategory === 'kids'" (click)="selectCategory('kids')">KIDS</button>
+  </div>
+
+  

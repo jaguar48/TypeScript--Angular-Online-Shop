@@ -10,7 +10,7 @@
   
   .categories {
     display: flex;
-    /* justify-content: center; */
+    
     margin: 2rem 0;
     margin-left: 25px;
     
@@ -23,7 +23,9 @@
     color:black;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
+    
   }
+
   .categories button.selected {
     border-bottom: 2px rgb(0, 242, 0) solid;
     color: rgb(0, 242, 0);
@@ -78,31 +80,26 @@
     font-weight: 400;
   }
   
-  .cart-total {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
+  
   .cat{
   float: left;
-  
-   margin-top: 70px;
-font-family : sans-serif ;
-font-size: 42px;
-font-weight: 10;
-line-height: 16px;
-letter-spacing: 0px;
+  margin-top: 70px;
+  font-family : sans-serif ;
+  font-size: 42px;
+  font-weight: 10;
+  line-height: 16px;
+  letter-spacing: 0px;
 
-padding-left: 40px;
+  padding-left: 40px;
 
   }
   .shopping{
     display: flex;
-    /* justify-content: center; */
+
     margin: 2rem 0;
     margin-left: 25px;
     float: right;
-    margin-top: -25px;
+    margin-top: -45px;
   
   }
   .shopping span{
@@ -118,9 +115,159 @@ padding-left: 40px;
 }
 
 .bi {
-  font-size: 2rem; /* Change the value as needed */
+  font-size: 2rem; 
 }
 span{
   color: #000000;
 }
 
+.btn:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.cart-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 220px;
+  z-index: 1;
+  background-color: #ffffff;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  min-width: 350px;
+  height:550px
+}
+.cart-item {
+  
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+
+
+.cart-item h2 {
+  margin: 0;
+  font-size: 24px;
+
+  flex-grow: 1;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  border: 1 px solid black;
+  float:right;
+  margin-right: 2px;
+ 
+}
+
+
+.quantity button {
+  background-color: rgb(255, 255, 255);
+  border: 1 px solid black;
+  color: #1c1c1c;
+  font-size: 12px;
+  padding: 3px;
+  height:30px;
+  width: 30px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+.quantity span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.price {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+ 
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.checkout-button {
+  display: block;
+  margin-top: 10px;
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  float: right;
+  width: 150px;
+ 
+}
+.checkout{
+ 
+  margin-top: 10px;
+  background-color: #ffffff;
+  border-radius: none;
+  color: #040404;
+  font-size: 14px;
+  border: 1 px solid rgb(0, 0, 0);
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}
+.cur{
+  float:right;
+}
+
+.payment-error {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+
+.sizes {
+  margin-top: 1rem;
+ 
+}
+
+.sizes button {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #000000;
+  padding: 0.3rem;
+  margin-right: 0.7rem;
+  margin:3px;
+  
+  text-align: left;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  
+}
+.color button{
+  padding: 0.5rem;
+  margin-right: 0.7rem;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+
+}
+.color button.selected {
+  background-color: #333;
+  color: #fff;
+}
+
+.sizes button.selected {
+  background-color: #333;
+  color: #fff;
+}

@@ -1,12 +1,7 @@
 <div class="container">
-   <div class="categories">
-    <button [class.selected]="selectedCategory === 'all'" (click)="selectCategory()">ALL</button>
-    <button [class.selected]="selectedCategory === 'women'" (click)="selectCategory()">WOMEN</button>
-    <button  [class.selected]="selectedCategory === 'men'" (click)="selectCategory()">MEN</button>
-    <button [class.selected]="selectedCategory === 'kids'" (click)="selectCategory()">KIDS</button>
+   
+  <app-category-navigation (categorySelected)="selectCategory()"></app-category-navigation>
 
-  </div>
-  
   <br><br>
     <div class="row justify-content-center">
       <div class="col-md-6">

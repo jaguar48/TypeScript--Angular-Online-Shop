@@ -1,0 +1,28 @@
+
+.categories {
+    display: flex;
+    /* justify-content: center; */
+    margin: 2rem 0;
+    margin-left: 25px;
+    
+  }
+  
+  .categories button {
+   
+    padding: 0.5rem 1rem;
+    border: none;
+    color:black;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  .categories button.selected {
+    border-bottom: 2px rgb(0, 242, 0) solid;
+    color: rgb(0, 242, 0);
+  }
+  
+
+  .categories button:hover {
+   
+    color: #000000;
+    border-bottom: 2px hsl(120, 100%, 47%) solid;
+  }

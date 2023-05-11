@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   currentProducts: any[] = [];
   clothingProducts: any[] = [];
   cart: any[] = [];
-  cartTotal: any;
   selectedCategory: string = 'all';
   showCartDropdown = false;
   title:string ="";
@@ -24,7 +23,10 @@ export class HomeComponent implements OnInit {
   selectedCurrency: string = 'NGN';
   currencySymbol: string = '₦'; 
   currencyRate: number = 1; 
-
+  selectedColor = '';
+  selectedSize = '';
+  cartTotal: any;
+  
   constructor(
     private router: Router,
     private productService: ProductService,
@@ -112,6 +114,9 @@ export class HomeComponent implements OnInit {
       item.price *= this.currencyRate;
     });
   }
-  
+
+  viewCart(){
+    this.router.navigate(['cart']);
+  }
   
   }

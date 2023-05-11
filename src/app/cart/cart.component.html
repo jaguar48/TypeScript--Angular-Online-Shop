@@ -1,14 +1,50 @@
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="cartButton">
-    <ul class="list-group list-group-flush">
-      <li *ngFor="let item of cart" class="list-group-item d-flex justify-content-between align-items-center">
-        {{ item.productName }} - {{ item.size }} - {{ item.quantity }}
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-outline-secondary" (click)="decreaseQuantity(item)">-</button>
-          <button type="button" class="btn btn-outline-secondary" (click)="increaseQuantity(item)">+</button>
-        </div>
-      </li>
-    </ul>
-    <div class="dropdown-divider"></div>
-    <button class="btn btn-primary btn-block" (click)="checkout()">Checkout</button>
+
+
+<app-category-navigation (categorySelected)="selectCategory()"></app-category-navigation>
+<div class="container">
+  <div class="row justify-content-center">
+<div class="cart-item" *ngFor="let item of cart">
+  <img [src]="item.image" [alt]="item.name">
+ <div class="quantity">
+    <div style="margin-top: 0px; "><button (click)="decreaseQuantity(item)">-</button></div>
+    <span style="float: right;padding-top: 60px;padding-left: 10px;">{{ item.quantity }}</span>
+    <div  style="margin-top: 60px; "><button (click)="increaseQuantity(item)">+</button></div>
   </div>
-  
+  <div class="cart-item-details">
+    <h2>{{ item.name }}</h2>
+    <b><p class="price">{{ item.price | currency:'USD' }}</p></b>
+    <label for="size">Size:</label>
+    <div class="sizes ">
+      <button *ngFor="let size of item.sizes" 
+              [class.selected]="selectedSize === size" 
+              (click)="selectedSize = size">{{ size }}</button>
+    </div>
+    <label for="color">Color:</label>
+    <div class="color">
+      <button *ngFor="let color of item.colors" 
+              [class.selected]="selectedColor === color" 
+              (click)="selectedColor = color" 
+              [style.backgroundColor]="color"></button>
+    </div>
+  </div><hr>
+</div>
+<p class="cart-total">Tax 21%: <b >{{ taxAmount | currency:'USD' }}</b></p> 
+<p class="cart-total">Quantity: <b >{{ cart.length }}</b></p> 
+<p class="cart-total">Total: <b>{{ totalAmount | currency:'USD' }}</b></p> 
+<div style="float:left;">
+    <button class="checkout-button"
+    angular4-paystack
+    [key]="'pk_live_60db3af35e4c5a3b71212944c7dc81d61dcbb568'"
+    [email]="'mailexample@mail.com'"
+    [amount]="cartTotal * 100"
+    [ref]="reference"
+    [class]="'btn btn-primary'"
+    (click)="checkout()"
+    (paymentInit)="paymentInit()"
+    (onClose)="paymentCancel()"
+    (callback)="paymentDone($event)">
+    CHECKOUT
+    </button>
+  </div>
+  </div>
+</div>

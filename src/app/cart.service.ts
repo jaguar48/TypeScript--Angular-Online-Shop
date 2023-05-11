@@ -15,17 +15,7 @@ export class CartService {
     return this.cart;
   }
 
-  addToCart(item: any): void {
-    const existingItemIndex = this.cart.findIndex(cartItem => cartItem.id === item.id);
-    if (existingItemIndex !== -1) {
-      
-      this.cart[existingItemIndex].quantity++;
-    } else {
-      
-      this.cart.push({...item, quantity: 1});
-    }
-    this.saveCart();
-  }
+ 
 
   removeFromCart(item: any): void {
     const index = this.cart.findIndex(cartItem => cartItem.id === item.id);
